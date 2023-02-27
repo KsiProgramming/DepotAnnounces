@@ -48,8 +48,8 @@ namespace DepotAnnounces._02.Application.Services.GouvAPIAddress
                                             ZipCode = int.Parse(address!.properties!.postcode!),
                                             CityName = address?.properties!.city,
                                             Label = address?.properties!.label,
-                                            Latitude = Convert.ToString(address!.geometry!.coordinates![0], CultureInfo.InvariantCulture),
-                                            Longitude = Convert.ToString(address!.geometry!.coordinates![1], CultureInfo.InvariantCulture),
+                                            Latitude = Convert.ToString(address!.geometry!.coordinates![1], CultureInfo.InvariantCulture),
+                                            Longitude = Convert.ToString(address!.geometry!.coordinates![0], CultureInfo.InvariantCulture),
                                             RegionName = address.properties.context.Split(',')[2]??"",
                                             StateName = address.properties.context.Split(',')[1] ?? "", 
                                         };

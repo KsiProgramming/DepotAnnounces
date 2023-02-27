@@ -16,7 +16,9 @@ namespace DepotAnnounces._03.Presentation.API.Profiles
                                                              .ForMember(dest => dest.EnergyEfficiency,
                                                                                                 opt => opt.MapFrom(src => $"{src.EnergyEfficiency.ToString()}"))
                                                              .ForMember(dest => dest.Type,
-                                                                                                opt => opt.MapFrom(src => $"{src.Type.ToString()}"));
+                                                                                                opt => opt.MapFrom(src => $"{src.Type.ToString()}"))
+                                                             .ForMember(dest => dest.FullPrice,
+                                                                                                opt => opt.MapFrom(src => $"{(src.ChargesPrice + src.PriceWithoutCharges)}"));
             CreateMap<AnnounceForCreation, AnnounceEntity>();
         } 
        

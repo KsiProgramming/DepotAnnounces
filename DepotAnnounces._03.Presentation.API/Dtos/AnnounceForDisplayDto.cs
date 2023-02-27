@@ -16,9 +16,8 @@ namespace DepotAnnounces._03.Presentation.API.Dtos
         public int? numRooms { get; set; }
         public int? numBedRooms { get; set; }
         public bool? IsFurnished { get; set; }
-        public string? Picture { get; set; }
-        public int? PriceWithoutCharges { get; set; }
-        public int? ChargesPrice { get; set; }
+        public string? Picture { get; set; }        
+        public string? FullPrice{ get; set; }
         public int DamageDeposit { get; set; }
         public bool IsIntenseArea { get; set; }
         public string PropertyType { get; set; }

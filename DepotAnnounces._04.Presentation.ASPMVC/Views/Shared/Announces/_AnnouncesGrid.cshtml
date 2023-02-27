@@ -1,0 +1,8 @@
+﻿@model AnnouncesViewModel
+
+<div class="row" style="padding-top: 10px">
+    @foreach (var announce in Model.Announces ?? Enumerable.Empty<AnnounceForDisplayDto>())
+    {
+            <partial name="/Views/Shared/Announces/_AnnounceCard.cshtml" model="announce" />
+    }
+</div>

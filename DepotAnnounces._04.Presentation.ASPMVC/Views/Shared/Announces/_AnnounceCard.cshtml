@@ -1,0 +1,76 @@
+﻿@model AnnounceForDisplayDto
+<div class="col-md-4" style="padding-top:10px;">
+    <div class="card" bg-dark mb-3 style="width: 18rem; box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.15);transition: all .2s ease-out;">
+        @*<img class="card-img-top" src="@Model.ImageUrl" alt="Card image cap">*@
+        <div class="flip-box">
+            <div class="flip-box-inner">
+                <div class="flip-box-front">
+                    <img class="card-img-top" src="@Model.Picture" alt="@Model.Title">
+                </div>
+                <div class="flip-box-back">
+                    <h2>@Model.Title</h2>
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title" style="display:inline;">@Model.Title</h5>
+            @*<a asp-controller="Pies" asp-action="Details" asp-route-id="@Model.Id">
+            <i class="bi bi-three-dots-vertical" style="display:inline;"></i>
+            </a>*@
+            <p class="card-text">@Model.FullPrice € </p>
+            <p class="card-text">@Model.Location</p>
+            <p class="card-text">@Model.Temperature <i class="bi bi-brightness-high-fill"></i></p>
+            <a href="#" class="btn btn-primary"> <i class="bi bi-three-dots-vertical"></i> Détails</a>
+        </div>
+    </div>
+</div>
+<style>
+    /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    .flip-box {
+        border-radius: 5px 5px 5px 5px;
+        /*display:flow-root;*/
+        background-color: transparent;
+        width: contain;
+        height: 180PX;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-box-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-box:hover .flip-box-inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-box-front, .flip-box-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+    }
+
+    /* Style the front side (fallback if image is missing) */
+    .flip-box-front {
+        background-color: #bbb;
+        color: lightslategrey;
+    }
+
+    /* Style the back side */
+    .flip-box-back {
+        background-color: lightslategrey;
+        color: white;
+        transform: rotateY(180deg);
+    }
+</style>

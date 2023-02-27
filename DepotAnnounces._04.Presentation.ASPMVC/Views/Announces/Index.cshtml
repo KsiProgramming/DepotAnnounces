@@ -1,0 +1,18 @@
+﻿@model AnnouncesViewModel
+
+
+
+<form asp-controller="Announces" asp-action="Index" method="get">
+    <div class="form-group">
+        <div class="input-group mb-3">
+            <input type="search" class="form-control" placeholder="Search word" aria-label="Search word" aria-describedby="button-addon2" name="searchKey" />
+            <div class="input-group-btn">
+                <button class="btn btn-primary" id="button-addon2"><i class="bi bi-search"></i></button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <partial name="/Views/Shared/Announces/_AnnouncesGrid.cshtml" model="Model" />
+</div>
